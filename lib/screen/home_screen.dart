@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:zipzung_app/screen/life_screen.dart';
+import 'package:zipzung_app/screen/search_screen.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -12,7 +14,7 @@ class HomeScreen extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           const Image(image: AssetImage('./assets/test.png')),
-          const SizedBox(height: 40),
+          const SizedBox(height: 30),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
@@ -63,7 +65,197 @@ class HomeScreen extends StatelessWidget {
             ],
           ),
           Column(
-            children: const [Text('어떤 중계사를 찾고 게신가요?')],
+            children: [
+              const SizedBox(height: 30),
+              const Text(
+                '어떤 중계사를 찾고 계신가요?',
+                style: TextStyle(
+                  fontSize: 22,
+                  fontWeight: FontWeight.w600,
+                ),
+              ),
+              const SizedBox(height: 12),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  GestureDetector(
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) =>
+                              const SearchScreen(category: 'apartment'),
+                        ),
+                      );
+                    },
+                    child: Container(
+                      width: 150,
+                      height: 90,
+                      decoration: BoxDecoration(
+                        border: Border.all(
+                          width: 1,
+                          color: Colors.grey,
+                        ),
+                        borderRadius:
+                            const BorderRadius.all(Radius.circular(5.0)),
+                      ),
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          SvgPicture.asset(
+                            'assets/apartment.svg',
+                            fit: BoxFit.scaleDown,
+                          ),
+                          const SizedBox(height: 6),
+                          const Text(
+                            '아파트',
+                            style: TextStyle(
+                              fontSize: 13,
+                              fontWeight: FontWeight.w900,
+                            ),
+                          )
+                        ],
+                      ),
+                    ),
+                  ),
+                  const SizedBox(width: 10),
+                  Container(
+                    width: 150,
+                    height: 90,
+                    decoration: BoxDecoration(
+                      border: Border.all(
+                        width: 1,
+                        color: Colors.grey,
+                      ),
+                      borderRadius:
+                          const BorderRadius.all(Radius.circular(5.0)),
+                    ),
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        SvgPicture.asset(
+                          'assets/house.svg',
+                          fit: BoxFit.scaleDown,
+                        ),
+                        const SizedBox(height: 6),
+                        const Text(
+                          '주거지',
+                          style: TextStyle(
+                            fontSize: 13,
+                            fontWeight: FontWeight.w900,
+                          ),
+                        )
+                      ],
+                    ),
+                  ),
+                ],
+              ),
+              const SizedBox(height: 12),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Container(
+                    width: 150,
+                    height: 90,
+                    decoration: BoxDecoration(
+                      border: Border.all(
+                        width: 1,
+                        color: Colors.grey,
+                      ),
+                      borderRadius:
+                          const BorderRadius.all(Radius.circular(5.0)),
+                    ),
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        SvgPicture.asset(
+                          'assets/commerce.svg',
+                          fit: BoxFit.scaleDown,
+                        ),
+                        const SizedBox(height: 6),
+                        const Text(
+                          '상업지',
+                          style: TextStyle(
+                            fontSize: 13,
+                            fontWeight: FontWeight.w900,
+                          ),
+                        )
+                      ],
+                    ),
+                  ),
+                  const SizedBox(width: 10),
+                  Container(
+                    width: 150,
+                    height: 90,
+                    decoration: BoxDecoration(
+                      border: Border.all(
+                        width: 1,
+                        color: Colors.grey,
+                      ),
+                      borderRadius:
+                          const BorderRadius.all(Radius.circular(5.0)),
+                    ),
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        SvgPicture.asset(
+                          'assets/industry.svg',
+                          fit: BoxFit.scaleDown,
+                        ),
+                        const SizedBox(height: 6),
+                        const Text(
+                          '공업지',
+                          style: TextStyle(
+                            fontSize: 13,
+                            fontWeight: FontWeight.w900,
+                          ),
+                        )
+                      ],
+                    ),
+                  ),
+                ],
+              ),
+              const SizedBox(height: 12),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Container(
+                    width: 150,
+                    height: 90,
+                    decoration: BoxDecoration(
+                      border: Border.all(
+                        width: 1,
+                        color: Colors.grey,
+                      ),
+                      borderRadius:
+                          const BorderRadius.all(Radius.circular(5.0)),
+                    ),
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        SvgPicture.asset(
+                          'assets/special.svg',
+                          fit: BoxFit.scaleDown,
+                        ),
+                        const SizedBox(height: 6),
+                        const Text(
+                          '특수 부동산',
+                          style: TextStyle(
+                            fontSize: 13,
+                            fontWeight: FontWeight.w900,
+                          ),
+                        )
+                      ],
+                    ),
+                  ),
+                  const SizedBox(width: 10),
+                  const SizedBox(
+                    width: 150,
+                    height: 90,
+                  ),
+                ],
+              ),
+            ],
           )
         ],
       )),
