@@ -19,7 +19,7 @@ class HomeScreen extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Container(
-                width: 110,
+                height: 42,
                 decoration: const BoxDecoration(
                   border:
                       Border(bottom: BorderSide(color: Colors.black, width: 2)),
@@ -47,11 +47,13 @@ class HomeScreen extends StatelessWidget {
                   ),
                 ),
                 onPressed: () {
-                  Navigator.push(
+                  Navigator.pushReplacement(
                     context,
-                    MaterialPageRoute(
-                      builder: (context) => const LifeScreen(),
-                      fullscreenDialog: true,
+                    PageRouteBuilder(
+                      pageBuilder: (context, animation1, animation2) =>
+                          const LifeScreen(),
+                      transitionDuration: Duration.zero,
+                      reverseTransitionDuration: Duration.zero,
                     ),
                   );
                 },
@@ -65,16 +67,20 @@ class HomeScreen extends StatelessWidget {
             ],
           ),
           Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               const SizedBox(height: 30),
-              const Text(
-                '어떤 중계사를 찾고 계신가요?',
-                style: TextStyle(
-                  fontSize: 22,
-                  fontWeight: FontWeight.w600,
+              Container(
+                margin: const EdgeInsets.only(left: 40),
+                child: const Text(
+                  '어떤 중계사를 찾고 계신가요?',
+                  style: TextStyle(
+                    fontSize: 20,
+                    fontWeight: FontWeight.w600,
+                  ),
                 ),
               ),
-              const SizedBox(height: 12),
+              const SizedBox(height: 16),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [

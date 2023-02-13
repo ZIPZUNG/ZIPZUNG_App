@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:zipzung_app/components/clean_test_widget.dart';
 import 'package:zipzung_app/components/post_widget.dart';
 
 class SearchScreen extends StatefulWidget {
@@ -94,16 +95,28 @@ class _SearchScreenState extends State<SearchScreen> {
                 height: 2,
                 color: const Color(0xFFCCCCCC),
               ),
-              for (var i = 1; i <= 10; i++)
-                const PostWidget(
-                  name: '친절한 공인중개사',
-                  description:
-                      '안녕하세요 친절한 공인중개사입니다. OO시 OO구에서\n일해왔으며 그동안고객들의 니즈에 맞는 집들을 알아...',
-                  expertise: '아파트',
-                  belong: '공인중개사',
-                  items: 100,
-                  grade: 4.5,
-                ),
+              if (widget.category == 'apartment')
+                for (var i = 1; i <= 10; i++)
+                  const PostWidget(
+                    name: '친절한 공인중개사',
+                    description:
+                        '안녕하세요 친절한 공인중개사입니다. OO시 OO구에서\n일해왔으며 그동안고객들의 니즈에 맞는 집들을 알아...',
+                    expertise: '아파트',
+                    belong: '공인중개사',
+                    items: 100,
+                    grade: 4.5,
+                  ),
+              if (widget.category == 'clean')
+                for (var i = 1; i <= 10; i++)
+                  const CleanTestWidget(
+                    name: '집중 청소 클린',
+                    description:
+                        '언제나 집을 깨끗하게 집중 청소 클린입니다.\n업계 고객 만족도 1위를 6년간 달성한 업체...',
+                    expertise: '청소',
+                    belong: '응답빠름',
+                    items: 174,
+                    grade: 4.8,
+                  ),
             ],
           ),
         ),
