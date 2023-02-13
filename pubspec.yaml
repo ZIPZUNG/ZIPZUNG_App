@@ -80,6 +80,10 @@ flutter:
     - assets/facebook.png
     - assets/image.png
 
+    - assets/test_.png
+    - assets/test_clean.png
+    - assets/card.png
+
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
 
